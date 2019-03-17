@@ -2,9 +2,10 @@
   "name": "bloccit",
   "version": "1.0.0",
   "description": "A Reddit-like application for users to discuss and share content",
-  "main": "(index.js)",
+  "main": "(src/server.js)",
   "scripts": {
-    "test": "export NODE_ENV=test && jasmine\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001bst\u001b[C\u001b[et\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[NODE_ENV=test && jasmine"
+    "test": "set NODE_ENV=test && jasmine",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/lost-stranger/Bloccit/issues"
   },
-  "homepage": "https://github.com/lost-stranger/Bloccit#readme"
+  "homepage": "https://github.com/lost-stranger/Bloccit#readme",
+  "devDependencies": {
+    "jasmine": "^3.0.0",
+    "request": "^2.83.0"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
