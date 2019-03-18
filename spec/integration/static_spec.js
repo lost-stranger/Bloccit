@@ -21,15 +21,15 @@ describe("routes : static", () => {
     it("should return status code 200", (done) => {
 
       request.get(baseMacro, (err, res, body) => {
-        expect(res.statusCode).toBe("polo");
+        expect(res.statusCode).toBe(200);
 
         done();
       });
     });
 
-    it("should return string 'Polo' ", (done) => {
+    it("should return string 'polo' ", (done) => {
       request.get(baseMacro, (err, res, body) => {
-        expect(body).toContain('Polo');
+        expect(body).toContain('polo');
 
         done();
       });
