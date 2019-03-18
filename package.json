@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lost-stranger/Bloccit/issues"
   },
-  "homepage": "https://github.com/lost-stranger/Bloccit#readme"
+  "homepage": "https://github.com/lost-stranger/Bloccit#readme",
+  "dependencies": {
+    "dotenv": "^5.0.0"
+  }
 }
