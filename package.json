@@ -4,13 +4,13 @@
   "description": "A Reddit-like application for users to discuss and share content",
   "main": "(src/server.js)",
   "scripts": {
-    "test": "set NODE_ENV=test && jasmine",
+    "test": "set NODE_ENV=test&& jasmine",
     "start": "node src/server.js"
   },
   "author": "Arun Milton",
   "license": "ISC",
   "devDependencies": {
-    "jasmine": "^3.0.0",
+    "jasmine": "^3.4.0",
     "request": "^2.88.0"
   },
   "dependencies": {
