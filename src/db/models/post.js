@@ -6,7 +6,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    body: DataTypes.STRING,
     body: {
       type: DataTypes.STRING,
       allowNull: false
@@ -23,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
     Post.belongsTo(models.Topic, {
       foreignKey: "topicId",
       onDelete: "CASCADE"
+    });
+    Post.hasMany(models.Flair, {
+      foreignKey: "postId",
+      as: "flairs"
     });
   };
   return Post;
