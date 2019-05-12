@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      colour: {
+      color: {
         type: Sequelize.STRING,
         allowNull: false
       },
@@ -33,7 +33,8 @@ module.exports = {
           key: "id",
           as: "postId"
         }
-      }
+      },
+
     });
   },
   down: (queryInterface, Sequelize) => {

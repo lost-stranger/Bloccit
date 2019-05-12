@@ -17,21 +17,21 @@ describe("routes : flairs", () => {
         sequelize.sync({force: true}).then((res) => {
 
             Topic.create({
-                title: "Summer in Canada",
-                description: "Talk about your summer adventures."
+                title: "Winter Games",
+                description: "Post your Winter Games stories."
             }).then((topic) => {
                 this.topic = topic;
 
             Post.create({
-                title: "Backcountry camping",
-                body: "I love the Canadian Great Wilderness",
+                title: "Snowball Fighting",
+                body: "So much snow!",
                 topicId: this.topic.id
             })
             .then((post) => {
                 this.post = post;
 
             Flair.create({
-                name: "New",
+                name: "New!",
                 color: "green",
                 postId: this.post.id
             })
@@ -56,7 +56,7 @@ describe("routes : flairs", () => {
             });
         });
     });
-    describe("GET /posts/:postId/flairs/create", () => {
+    describe("POST /posts/:postId/flairs/create", () => {
 
         it("should create a new post and redirect", (done) => {
             const options = {
