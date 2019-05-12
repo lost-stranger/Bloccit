@@ -93,23 +93,19 @@ describe("routes : posts", () => {
  });
  describe("POST /topics/:topicId/posts/:id/destroy", () => {
 
-   it("should delete the post with the associated ID", (done) => {
+    it("should delete the post with the associated ID", (done) => {
 
- //#1
-     expect(post.id).toBe(1);
+      expect(this.post.id).toBe(1);
+      request.post(`${base}/${this.topic.id}/posts/${this.post.id}/destroy`, (err, res, body) => {
+        Post.findById(1)
+        .then((post) => {
+          expect(err).toBeNull();
+          expect(post).toBeNull();
+          done();
+        })
+      });
 
-     request.post(`${base}/${this.topic.id}/posts/${this.post.id}/destroy`, (err, res, body) => {
-
- //#2
-       Post.findById(1)
-       .then((post) => {
-         expect(err).toBeNull();
-         expect(post).toBeNull();
-         done();
-       })
-     });
-
-   });
+    });
 
  });
  describe("GET /topics/:topicId/posts/:id/edit", () => {
@@ -127,17 +123,17 @@ describe("routes : posts", () => {
  describe("POST /topics/:topicId/posts/:id/update", () => {
 
    it("should return a status code 302", (done) => {
-     request.post({
-       url: `${base}/${this.topic.id}/posts/${this.post.id}/update`,
-       form: {
-         title: "Snowman Building Competition",
-         body: "I love watching them melt slowly."
-       }
-     }, (err, res, body) => {
-       expect(res.statusCode).toBe(302);
-       done();
-     });
-   });
+  request.post({
+    url: `${base}/${this.topic.id}/posts/${this.post.id}/update`,
+    form: {
+      title: "Snowman Building Competition",
+      body: "I love watching them melt slowly."
+    }
+  }, (err, res, body) => {
+    expect(res.statusCode).toBe(302);
+    done();
+  });
+});
 
    it("should update the post with the given values", (done) => {
        const options = {
