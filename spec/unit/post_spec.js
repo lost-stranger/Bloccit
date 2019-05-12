@@ -107,7 +107,6 @@ describe("Post", () => {
 
 });
 describe("#getTopic()", () => {
-
    it("should return the associated topic", (done) => {
 
      this.post.getTopic()
@@ -115,8 +114,6 @@ describe("#getTopic()", () => {
        expect(associatedTopic.title).toBe("Expeditions to Alpha Centauri");
        done();
      });
-
    });
-
- });  
+ });
 });
