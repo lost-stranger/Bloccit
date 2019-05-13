@@ -9,7 +9,8 @@ for(let i = 1 ; i <= 10 ; i++){
     title: faker.hacker.noun(),
     body: faker.hacker.phrase(),
     createdAt: new Date(),
-    updatedAt: new Date()
+    updatedAt: new Date(),
+    topicId: 1
 });
 };
 
