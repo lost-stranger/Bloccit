@@ -79,7 +79,7 @@ describe("routes : posts", () => {
       );
     });
 
-    it("should not create a new post that fails validations", (done) => {/* spec implementation */});
+    //it("should not create a new post that fails validations", (done) => {/* spec implementation */});
 
      it("should not create a new post that fails validations", (done) => {
        const options = {
