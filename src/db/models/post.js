@@ -12,19 +12,29 @@ module.exports = (sequelize, DataTypes) => {
     topicId: {
       type: DataTypes.INTEGER,
       allowNull: false
-    }
-  }, {});
-  Post.associate = function(models) {
+    },
+  userId: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  }
+}, {});
 
-    Post.belongsTo(models.Topic, {
-      foreignKey: "topicId",
-      onDelete: "CASCADE"
-    });
+Post.associate = function(models) {
 
-    Post.hasMany(models.Flair, {
-      foreignKey: "postId",
-      as: "flairs"
-    });
-  };
-  return Post;
+  Post.belongsTo(models.Topic, {
+    foreignKey: "topicId",
+    onDelete: "CASCADE"
+  });
+  Post.belongsTo(models.User, {
+    foreignKey: "userId",
+    onDelete: "CASCADE"
+  });
+
+  Post.hasMany(models.Flair, {
+    foreignKey: "postId",
+    as: "flairs"
+  });
+};
+
+return Post;
 };
