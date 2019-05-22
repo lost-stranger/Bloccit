@@ -22,6 +22,7 @@ module.exports = {
 
 // #4
         if (!user || !authHelper.comparePass(password, user.password)) {
+
           return done(null, false, { message: "Invalid email or password" });
         }
 // #5
