@@ -34,6 +34,12 @@ Post.associate = function(models) {
     foreignKey: "postId",
     as: "flairs"
   });
+
+  Post.hasMany(models.Comment, {
+     foreignKey: "postId",
+     as: "comments"
+   });
+   
 };
 
 return Post;
