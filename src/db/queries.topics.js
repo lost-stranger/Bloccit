@@ -44,6 +44,7 @@ module.exports = {
       callback(err);
     })
   },
+
   deleteTopic(req, callback){
 
 // #1
@@ -71,6 +72,7 @@ module.exports = {
       callback(err);
     });
   },
+
   updateTopic(req, updatedTopic, callback){
 
 // #1
