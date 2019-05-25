@@ -3,7 +3,7 @@ const router = express.Router();
 
  //#1
 const commentController = require("../controllers/commentController");
-const validation = require("./validation");
+const validation = require("./validations");
 
  // #2
 router.post("/topics/:topicId/posts/:postId/comments/create",

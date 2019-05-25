@@ -41,7 +41,7 @@ describe("routes : users", () => {
           email: "user@example.com",
           password: "123456789"
         }
-      }
+      };
 
       request.post(options,
         (err, res, body) => {
