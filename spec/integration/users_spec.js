@@ -39,7 +39,8 @@ describe("routes : users", () => {
         url: base,
         form: {
           email: "user@example.com",
-          password: "123456789"
+          password: "123456789",
+          role: "member"
         }
       };
 
@@ -47,6 +48,7 @@ describe("routes : users", () => {
         (err, res, body) => {
 
 // #2
+
           User.findOne({where: {email: "user@example.com"}})
           .then((user) => {
             expect(user).not.toBeNull();
@@ -69,7 +71,8 @@ describe("routes : users", () => {
           url: base,
           form: {
             email: "no",
-            password: "123456789"
+            password: "123456789",
+            role: "member"
           }
         },
         (err, res, body) => {

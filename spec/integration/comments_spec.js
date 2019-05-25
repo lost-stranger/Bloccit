@@ -24,7 +24,8 @@ describe("routes : comments", () => {
 // #3
       User.create({
         email: "starman@tesla.com",
-        password: "Trekkie4lyfe"
+        password: "Trekkie4lyfe",
+        role: "member"
       })
       .then((user) => {
         this.user = user;  // store user
@@ -71,7 +72,7 @@ describe("routes : comments", () => {
 
   //test suites will go there
   // #1
-   describe("guest attempting to perform CRUD actions for Comment", () => {
+   describe("member attempting to perform CRUD actions for Comment", () => {
 
 // #2
      beforeEach((done) => {    // before each suite in this context

@@ -15,7 +15,8 @@ describe("routes : posts", () => {
     sequelize.sync({force: true}).then((res) => {
       User.create({
         email: "starman@tesla.com",
-        password: "Trekkie4lyfe"
+        password: "Trekkie4lyfe",
+        role: "member"
       })
       .then((user) => {
         this.user = user;
@@ -42,14 +43,14 @@ describe("routes : posts", () => {
     });
   });
 
-  // Context of Guest User
-  describe("guest user performing CRUD actions for Post", () => {
+  // Context of member User
+  describe("member user performing CRUD actions for Post", () => {
 
     beforeEach((done) => {
       request.get({
         url: "http://localhost:3000/auth/fake",
         form: {
-          role: "guest"
+          role: "member"
         }
       },
         (err, res, body) => {
@@ -138,7 +139,7 @@ describe("routes : posts", () => {
       });
     });
   });
-  });//End Guest User Context
+  });//End member User Context
 
   // Context of Member User
   describe("admin user performing CRUD actions for Topic", () => {
