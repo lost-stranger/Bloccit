@@ -109,7 +109,7 @@ describe("routes : posts", () => {
         request.post(`${base}/${this.topic.id}/posts/${this.post.id}/destroy`, (err, res, body) => {
           Post.findById(this.post.id)
           .then((post) => {
-            expect(post).not.toBeNull();
+            expect(post).toBeNull();
             done();
           })
        });
@@ -134,7 +134,7 @@ describe("routes : posts", () => {
           body: "I love watching them melt slowly."
         }
       }, (err, res, body) => {
-        expect(res.statusCode).not.toBe(302);
+        expect(res.statusCode).toBe(302);
         done();
       });
     });

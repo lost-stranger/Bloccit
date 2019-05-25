@@ -32,17 +32,18 @@ module.exports = {
         })
       },
 
-      deletePost(req, callback){
-        return Post.destroy({
-          where: {req.params.id }
-        })
-        .then((deletedRecordsCount) => {
-          callback(null, deletedRecordsCount);
+      deletePost(req, callback) {
+    return Post.findById(req.params.id)
+        .then((post) => {
+                post.destroy()
+                    .then((res) => {
+                        callback(null, post);
+                    });
         })
         .catch((err) => {
-          callback(err);
-        })
-      },
+            callback(err);
+        });
+  },
 
       updatePost(req, updatedPost, callback) {
     return Post.findById(req.params.id)
