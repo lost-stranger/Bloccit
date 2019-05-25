@@ -32,9 +32,9 @@ module.exports = {
         })
       },
 
-      deletePost(id, callback){
+      deletePost(req, callback){
         return Post.destroy({
-          where: { id }
+          where: {req.params.id }
         })
         .then((deletedRecordsCount) => {
           callback(null, deletedRecordsCount);
@@ -44,8 +44,8 @@ module.exports = {
         })
       },
 
-      updatePost(id, updatedPost, callback){
-        return Post.findById(id)
+      updatePost(req, updatedPost, callback) {
+    return Post.findById(req.params.id)
         .then((post) => {
           if(!post){
             return callback("Post not found");

@@ -107,7 +107,7 @@ describe("routes : posts", () => {
     it("should not delete the post with the associated ID", (done) => {
       expect(this.post.id).toBe(1);
         request.post(`${base}/${this.topic.id}/posts/${this.post.id}/destroy`, (err, res, body) => {
-          Post.findById(1)
+          Post.findById(this.post.id)
           .then((post) => {
             expect(post).not.toBeNull();
             done();
@@ -242,6 +242,7 @@ describe("routes : posts", () => {
         request.post(`${base}/${this.topic.id}/posts/${this.post.id}/destroy`, (err, res, body) => {
           Post.findById(1)
           .then((post) => {
+            console.log("POST THAT SHOULD BE DELETED:" + post);
             expect(err).toBeNull();
             expect(post).toBeNull();
             done();
