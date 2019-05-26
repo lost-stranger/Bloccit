@@ -66,7 +66,6 @@ describe("Vote", () => {
   });
 
   //suits will begin here
-  beforeEach((done) => {/* code */} );
 
   // #1
     describe("#create()", () => {
