@@ -251,7 +251,7 @@ describe("routes : posts", () => {
      });
    });
 
-  describe("GET /topics/:topicId/posts/:id/edit", () => {
+  describe("GET /topics/: topicId/posts/:id/edit", () => {
     it("should render a view with an edit post form", (done) => {
       request.get(`${base}/${this.topic.id}/posts/${this.post.id}/edit`, (err, res, body) => {
         expect(err).toBeNull();

@@ -30,21 +30,16 @@
     <% include ../comments/new.ejs %>
   <% } %>
  </section>
-
 <!-- #2 -->
  <section id="comment-list">
   <% if(post.comments) { %>
     <% post.comments.forEach((comment) => { %>
-
 <!-- #3 -->
       <%- include("../comments/show.ejs", {comment}) %>
     <% }) %>
   <% } %>
  </section>
-
       <hr>
-
-
     </main>
 
     <% include ../static/partials/baseScripts.ejs %>
