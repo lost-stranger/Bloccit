@@ -127,7 +127,7 @@ describe("routes : votes", () => {
          request.get(options,
            (err, res, body) => {
              Vote.findOne({
-               where: {
+             where: {
                  userId: this.user.id,
                  postId: this.post.id
                }
@@ -180,5 +180,5 @@ describe("routes : votes", () => {
 
    }); //end context for signed in user
 
- 
+
 });
