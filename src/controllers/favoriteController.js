@@ -6,7 +6,7 @@ module.exports = {
 // #2
  create(req, res, next){
    if(req.user){
-     favoriteQueries.createfavorite(req, (err, favorite) => {
+     favoriteQueries.createFavorite(req, (err, favorite) => {
        if(err){
          req.flash("error", err);
        }
@@ -21,7 +21,7 @@ module.exports = {
  destroy(req, res, next){
 
    if(req.user){
-     favoriteQueries.deletefavorite(req, (err, favorite) => {
+     favoriteQueries.deleteFavorite(req, (err, favorite) => {
        if(err){
          req.flash("error", err);
        }
